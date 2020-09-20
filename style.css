@@ -1,3 +1,6 @@
+
+
+
 /*!
 Theme Name: ghostnote
 Theme URI: http://underscores.me/
@@ -953,6 +956,9 @@ textarea {
 /* Additional Theme CSS */
 
 
+
+
+
 body { font-family: "Maven Pro";      font-style: normal;
 
 }
@@ -970,19 +976,18 @@ nav{
 
 nav > p{
 	display: inline-block;
-	padding-right: 20px;
 }
 
 
-nav > span{
-  padding-right: 0;
-}
 
 .vertical { 
 	border-left:1px solid #fff;
-	height:500px; 
-
+	 padding: 5px 5px;
 } 
+
+.clear{
+	display: none;
+}
 
 /*Main*/
 .container{
@@ -993,7 +998,7 @@ nav > span{
 .box {
 	position: relative;
 	text-decoration: none;
-	display: inline-block;
+	/* display: inline-block; */
 	border: 1px solid black;
 	padding: 0px 3px 50px;
 	margin: 25px 5px;
@@ -1018,8 +1023,8 @@ nav > span{
   height: 100%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   opacity: 0;
-  /* -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); */
+   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); 
 }
 
 
@@ -1048,14 +1053,15 @@ nav > span{
 	height: 100%;
 	z-index: 1;
 	display: flex;
-	align-items: center;
-	justify-content: right;
-	text-align: center;
+ align-items: center;
+	justify-content: left;
+	text-align: center; 
 	box-sizing: border-box;
 	color: rgb(98, 112, 191);
 	text-transform: uppercase;
 	overflow: hidden;
-	padding: 200px 0px 0px 190px;
+	padding-top: 200px;
+	padding-left: 190px;
 	transition: transform 1.3s ease 0s;
 	text-decoration: underline;
 	font-weight: 100;
@@ -1097,12 +1103,14 @@ button:hover {
 
 button:active {
   outline: none;
-  border: none;
+	border: none;
+	
 }
 
 button:focus {
   outline: 0;
 }
+
 
 
 .row:after {
@@ -1113,3 +1121,4 @@ button:focus {
 .show {
   display: block;
 }
+

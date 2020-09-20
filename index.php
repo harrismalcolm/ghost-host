@@ -16,10 +16,11 @@ get_header();
 ?>
 <main>
     <nav id="myBtnContainer">
-      <p class="btn active" onclick="filterSelection('all')"> Filter By</</p>
-      <p><span class="vertical"></span></p>
-      <button class="btn" onclick="filterSelection('copyright')">Copyright</button>
-      <button class="btn" onclick="filterSelection('cultural_heritage')">Cultural Heritage</button>
+      <p style="	padding-right: 15px;"> Filter By</p>
+      <p> <span class="vertical"></span></p>
+     <button class="btn" onclick="filterSelection('copyright')">Copyright</button>
+      <button class="btn" onclick="filterSelection('cultural_heritage')">Cultural Heritage</button> 
+      <button  class="btn active " onclick="filterSelection('all')">Clear</button> 
     </nav>
     <div class="container">
       <!--Top Section-->
@@ -79,15 +80,16 @@ get_header();
 
 
 filterSelection("all") // Execute the function and show all columns
-function filterSelection(c) {
+function  filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("box");
   if (c == "all") c = "";
   // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
   for (i = 0; i < x.length; i++) {
     removeClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) addClass(x[i], "show"); 
   }
+  
 }
 
 // Show filtered elements
