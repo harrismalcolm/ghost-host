@@ -20,7 +20,7 @@ get_header();
       <p> <span class="vertical"></span></p>
      <button class="btn" onclick="filterSelection('copyright')">Copyright</button>
       <button class="btn" onclick="filterSelection('cultural_heritage')">Cultural Heritage</button> 
-      <button  class="btn active " onclick="filterSelection('all')">Clear</button> 
+      <button id="reset"  class="btn active clear" onclick="filterSelection('all')">Show All</button> 
     </nav>
     <div class="container">
       <!--Top Section-->
@@ -89,7 +89,6 @@ function  filterSelection(c) {
     removeClass(x[i], "show");
     if (x[i].className.indexOf(c) > -1) addClass(x[i], "show"); 
   }
-  
 }
 
 // Show filtered elements
@@ -102,6 +101,7 @@ function addClass(element, name) {
       element.className += " " + arr2[i];
     }
   }
+  
 }
 
 // Hide elements that are not selected
@@ -120,13 +120,20 @@ function removeClass(element, name) {
 // Add active class to the current button (highlight it)
 var btnContainer = document.getElementById("myBtnContainer");
 var btns = btnContainer.getElementsByClassName("btn");
+var show = document.getElementById('reset');
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function(){
     var current = document.getElementsByClassName("active");
     current[0].className = current[0].className.replace(" active", "");
     this.className += " active";
+    if (show.classList.contains("active")){
+    show.classList.add('clear');
+  } else{
+    show.classList.remove('clear');
+  }
   });
 }
+
 </script>
 
 
