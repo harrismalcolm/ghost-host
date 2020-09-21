@@ -962,6 +962,7 @@ textarea {
 body { font-family: "Maven Pro";      font-style: normal;
 
 }
+
 /*Nav Filter*/
 
 nav{
@@ -992,7 +993,8 @@ nav > p{
 /*Main*/
 .container{
 	margin: 0 auto;
-  padding: 2% 0 0 21%;
+	padding: 2% 0 0 21%;
+	max-width: 1550px;
 }
 
 .box {
@@ -1073,6 +1075,8 @@ h5 {
 	color: #6270BF;
 	font-weight: 400;
 }
+
+
 
 .row div p {
     margin: 0 auto;
