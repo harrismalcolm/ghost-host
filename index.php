@@ -18,14 +18,15 @@ get_header();
     <nav id="myBtnContainer">
       <p style="	padding-right: 15px;"> Filter By</p>
       <p> <span class="vertical"></span></p>
-     <button class="btn" onclick="filterSelection('copyright')">Copyright</button>
-      <button class="btn" onclick="filterSelection('cultural_heritage')">Cultural Heritage</button> 
+     <button class="btn" onclick="filterSelection('category-copyright')">Copyright</button>
+      <button class="btn" onclick="filterSelection('category-cultural-heritage')">Cultural Heritage</button> 
       <button id="reset"  class="btn active clear" onclick="filterSelection('all')">Show All</button> 
     </nav>
     <div class="container">
+    <div class="row">
       <!--Top Section-->
 
-      <div class="row">
+      <!-- <div class="row">
         <div class="box copyright">
           <a href="#" rel="noopener noreferrer">
           <h5>Copyright</h5>
@@ -46,10 +47,10 @@ get_header();
         <p>Intellectual Property "From Below": Copyright and Capability for Education</p>
         <p><span>Read More</span></p>
         </a>
-        </div>
+        </div> -->
       
       <!--Bottom Section-->
-      
+<!--       
         <div class="box cultural_heritage">
           <a href="#" rel="noopener noreferrer">
         <h5>Cultural Heritage</h5>
@@ -71,6 +72,21 @@ get_header();
           <p><span>Read More</span></p>
           </a>
           </div>
+      </div> -->
+
+      <?php 
+if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('box'); ?>>
+        <?php the_title( '<h5>', '</h5>' ); ?> 
+        <?php the_excerpt(); ?>
+        <p><span>Read More</span></p>
+        </article>
+        <?php endwhile; 
+else: 
+    _e( 'Sorry, no posts matched your criteria.', 'textdomain' ); 
+endif; 
+?>
+
       </div>
       </div>
   </main>
